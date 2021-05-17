@@ -1,0 +1,55 @@
+body {
+	background-color: #eee;
+  font-family: "Libre Baskerville", serif;
+}
+
+
+div {
+	margin: auto;
+	width: 50%;
+}
+
+table, th, td {
+	border-collapse: collapse;
+}
+
+th {
+	text-align: center;
+	padding: 4px;
+	border-bottom: 2px solid black;
+}
+
+td {
+	text-align: left;
+	padding: 4px;
+	border-bottom: 1px solid #a0a0a0;
+}
+
+#title, #subtitle {
+	font-weight: bold;
+	text-align: left;
+}
+
+
+.correct {
+	color: green;
+}
+
+.wrong {
+	color: red;
+}
+
+.wrong .td2 {
+	text-decoration: line-through;
+}
+
+.wrong .td3 {
+  font-style: italic;
+}
+
+.ui-autocomplete {
+  max-height: 250px;
+  overflow-y: auto;   
+  overflow-x: hidden; 
+}
+

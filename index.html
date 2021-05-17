@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Emil Gasimov 20180849</title>
+    <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet" />  
+    <link href="./capital_game.css" rel="stylesheet" />
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.0/firebase-database.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet' />
+
+
+
+    <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      var firebaseConfig = {
+        apiKey: "AIzaSyCB1lcf3urgY9dTnEUGpBeuyaUdMwREQTE",
+        authDomain: "world-capital-quiz-game.firebaseapp.com",
+        databaseURL: "https://world-capital-quiz-game-default-rtdb.firebaseio.com",
+        projectId: "world-capital-quiz-game",
+        storageBucket: "world-capital-quiz-game.appspot.com",
+        messagingSenderId: "505835168862",
+        appId: "1:505835168862:web:6b18a12f266efea48880cf",
+        measurementId: "G-RXBRSH54B8"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+
+
+  </head>
+  
+  
+  
+  <body>
+
+    <!--Your HTML here-->
+    <script src="jquery/js/jquery-1.9.0.min.js"></script>
+    <script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
+    <script src="./capital_game.js"></script>
+    
+
+
+
+    <div>
+			<h1 id="title">World Capital Quiz Game</h1>
+			<h3 id="subtitle">Do you know the capital of this country?</h3>
+
+      <div id='map' style='width: 600px; height: 450px; margin-left: auto; margin-right: auto;'></div>
+
+      <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoiZW1pbGdhc2ltb3YiLCJhIjoiY2tvcDhrNGxuMDN5bzJvbzVkb201djFoYiJ9.FCWkMSv4M9YMq1duBC9lMw';
+        var map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/satellite-streets-v11', // style URL
+        center: [-74.5, 40], // starting position [lng, lat]
+        zoom: 4 // starting zoom
+    });
+      </script>
+
+      <select id="dropdown">
+        <option id='All' value='All' selected>All</option>
+        <option id='Correct' value='Correct'>Correct</option>
+        <option id='Wrong' value='Wrong'>Wrong</option>
+      </select>
+
+      <button id="pr3__reset">Reset</button>
+      <button id="pr3__clear">Clear</button>
+      <button id="pr3__undo">Undo</button>
+		
+      <br />
+      <br />
+
+			<table id="table">
+				<tr><b>
+					<th>COUNTRY</th>
+					<th>CAPITAL CITY</th>
+					<th>ANSWER</th>
+				</b></tr>
+				
+				<tr>
+					<td id="pr2__country"></td>
+					<td><input type="text" id="pr2__capital"></td>
+					<td><button id="pr2__button">Check Answer</button>
+				</tr>
+				
+				<tr id="empty_list">
+          <td style="text-align: center;" colspan="3">The list is empty</td>
+        </tr>
+			</table>
+    </div>
+
+  </body>
+</html>
